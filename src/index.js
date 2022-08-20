@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
 import App from './components/app/app';
-//import './firebase';
 import './style/style.scss';
 
 import firebase from 'firebase/compat/app';

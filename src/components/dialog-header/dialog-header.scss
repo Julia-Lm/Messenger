@@ -1,11 +1,12 @@
 @import '../../style/mixins.scss';
 
 .user-info{
-    display: flex;
+    display: grid;
     align-items: center;
+    grid-template-columns: 40px auto 35px;
 
     .user-name{
-        margin-left: 5px;
+        padding-left: 5px;
         font-size: 14px;
         font-weight: 600;
         color:#fff;
@@ -53,8 +54,8 @@
 
 }
 .contacts-img{
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 40px;
     cursor: pointer;
     background-position: center;
     background-repeat: no-repeat;
