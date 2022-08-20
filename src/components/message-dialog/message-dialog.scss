@@ -29,22 +29,26 @@
         
         .user-text{
             border-radius: 10px 10px 0 10px;
-            background-color: rgb(214, 209, 209);
+            background-color: rgba(95, 138, 206, 0.534);
+            color: rgb(47, 75, 121);
         }
         .contact-text{
             border-radius: 10px 10px 10px 0;
-            background-color: rgb(171, 166, 166);
+            background-color: rgb(95, 138, 206);
+            color: #fff;
         }
 
         .user-data{
             text-align: end;
             padding: 5px;
             font-size: 10px;
+            color: rgb(47, 75, 121);
         }
         .contact-data{
             text-align: start;
             padding: 5px;
-            font-size: 12px;
+            font-size: 10px;
+            color: rgb(47, 75, 121);
         }   
     }
 }

@@ -5,12 +5,12 @@
 
     @include _mobile{
         display: block;
-        width: 25px;
+        width: 35px;
         height: 25px;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        margin-right: 10px;
+        margin-right: 20px;
     }
 }
 .user-icon{
@@ -18,4 +18,5 @@
 }
 .user-name{
     font-weight: 600;
+    color:#fff;
 }

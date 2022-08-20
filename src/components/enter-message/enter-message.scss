@@ -19,6 +19,11 @@
         margin-top: 5px;
         margin-bottom: 5px;
         resize: none;
+        color: rgb(47, 75, 121);
+
+        &::placeholder{
+            color: rgba(47, 75, 121, 0.707);
+        }
 
         @include _mobile{
             width: 92%;
@@ -42,6 +47,11 @@
         align-items: center;
         border: none;
         background-color: transparent;
+
+        line,
+        polygon {
+            color: #156de8e7;
+        }
 
         @include _mobile{
             width: 8%;

@@ -23,6 +23,7 @@
     &__dialog-header{
         height: 15%;
         border: 1px solid #156de8e7;
+        background-color: rgba(112, 160, 237, 0.866);
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -57,6 +58,7 @@
         height: 10%;
         padding: 5px;
         border: 1px solid #156de8e7;
+        background-color: rgba(112, 160, 237, 0.866);
     }
     &__message-dialog{
         height: 80%;
@@ -67,7 +69,7 @@
     &__enter-message{
         height: 10%;
         border: 1px solid #156de8e7;
-        background-color: rgb(74, 128, 235);
+        background-color: rgba(112, 160, 237, 0.866);
         display: flex;
         justify-content: center;
         align-items:center;
