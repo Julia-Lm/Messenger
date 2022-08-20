@@ -1,0 +1,31 @@
+.login-page{
+    height: 100vh;
+    background: no-repeat url(./lake.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-button{
+    padding: 20px;
+    background-color: #8080807d;
+
+    button{
+        margin-top: 0;
+        padding: 20px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        background-color: #156de8fc;
+        border: 0px solid transparent;
+        color: #fff;
+
+        &:hover{
+            transition: background-color 0.2s ease-in 0s;
+            background-color: #156de8cb;
+        }
+    }
+}
