@@ -1,22 +1,18 @@
-import React, { useContext } from "react";
-import { Context } from '../../index';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import React from "react";
+import { useSelector } from 'react-redux';
 import contactsIcon from '../../resources/contacts.svg';
 import noUserPhoto from '../../resources/userphoto.png';
 
 import './dialog-header.scss';
 
 const DialogHeader = (props) => {
-    const { auth } = useContext(Context);
-    const [user] = useAuthState(auth);
-
-
+    const { username, photoURL } = useSelector(state => state.user);
 
     return (
         <React.Fragment>
             <div className="user-info">
-                <div className="user-img" style={{ backgroundImage: `url(${user.photoURL ? user.photoURL : noUserPhoto})` }}></div>
-                <div className="user-name">{user.displayName}</div>
+                <div className="user-img" style={{ backgroundImage: `url(${photoURL ? photoURL : noUserPhoto})` }}></div>
+                <div className="user-name">{username ? username : 'User'}</div>
                 <div className="contacts-img" style={{ backgroundImage: `url(${contactsIcon})` }} onClick={props.onActiveContactList}></div>
             </div>
 

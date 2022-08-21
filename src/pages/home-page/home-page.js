@@ -1,16 +1,32 @@
-import React, { useContext } from 'react';
+import React, { useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Header } from 'components/header/header';
 import { Chat } from 'components/chat/chat';
-import { Context } from '../../index';
+import { getAuth } from "firebase/auth";
+import { useDispatch } from 'react-redux';
+import { setUser } from 'store/slices/userSlice';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import Loader from '../../components/loader/loader';
 
 import './home-page.scss';
 
 export const HomePage = () => {
-    const { auth } = useContext(Context);
+    const auth = getAuth();
     const [user, loading] = useAuthState(auth);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (user) {
+            dispatch(setUser({
+                username: user.displayName,
+                email: user.email,
+                photoURL: user.photoURL,
+                id: user.uid,
+                token: user.accessToken,
+            }));
+        }
+
+    }, [user])
 
 
     if (loading) {
@@ -34,33 +50,4 @@ export const HomePage = () => {
 
 }
 
-/*
 
-export const HomePage = () => {
-    //const { isAuth, email } = useAuth();
-    const auth = getAuth();
-    const [user, loading] = useAuthState(auth);
-
-    if (loading) {
-        return <Loader />
-    }
-
-    if (user) {
-        return (
-            <div className="home-page">
-                <Header />
-                <>
-                    <h1>Welcome home</h1>
-                </>
-
-
-            </div >
-        )
-    }
-
-    return (
-        <Redirect to={'/login'} />
-    )
-
-}
-*/

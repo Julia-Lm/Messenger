@@ -1,6 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { serverTimestamp } from "firebase/firestore";
-import { Context } from '../../index';
+import { getAuth } from "firebase/auth";
+import firebase from 'firebase/compat/app';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import userPhoto from '../../resources/userphoto.png';
 import Services from '../../services/services';
@@ -8,7 +9,8 @@ import Services from '../../services/services';
 import './enter-message.scss';
 
 const EnterMessage = (props) => {
-    const { auth, firestore } = useContext(Context);
+    const auth = getAuth();
+    const firestore = firebase.firestore();
     const [user] = useAuthState(auth);
     const [enterMessage, setEnterMessage] = useState('');
 

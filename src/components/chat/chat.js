@@ -1,18 +1,18 @@
-import React, { useContext, useState } from "react";
-import { Context } from '../../index';
+import React, { useState } from "react";
+import firebase from 'firebase/compat/app';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-import Loader from '../loader/loader';
-import DialogHeader from '../dialog-header/dialog-header';
-import DialogList from '../dialog-list/dialog-list';
-import MessageHeader from '../message-header/message-header';
-import MessageDialog from '../message-dialog/message-dialog';
-import EnterMessage from '../enter-message/enter-message';
+import Loader from 'components/loader/loader';
+import DialogHeader from 'components/dialog-header/dialog-header';
+import DialogList from 'components/dialog-list/dialog-list';
+import MessageHeader from 'components/message-header/message-header';
+import MessageDialog from 'components/message-dialog/message-dialog';
+import EnterMessage from 'components/enter-message/enter-message';
 
 import './chat.scss';
 
 export const Chat = () => {
-    const { firestore } = useContext(Context);
+    const firestore = firebase.firestore();
     const [messages] = useCollectionData(
         firestore.collection('messages').orderBy('createAt')
     );

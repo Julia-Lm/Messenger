@@ -1,13 +1,16 @@
 import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-
+import { Provider } from 'react-redux';
+import { store } from './store';
 import App from './components/app/app';
-import './style/style.scss';
-
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
+
+import './style/style.scss';
+
+
 
 firebase.initializeApp(
   {
@@ -21,9 +24,6 @@ firebase.initializeApp(
   }
 )
 
-const auth = firebase.auth();
-const firestore = firebase.firestore();
-
 export const Context = createContext(null);
 
 
@@ -31,15 +31,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Context.Provider value={{
-        firebase,
-        auth,
-        firestore
-      }}
-      >
+      <Provider store={store}>
         <App />
-      </Context.Provider>
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );
-
